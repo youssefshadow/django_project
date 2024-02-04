@@ -1,0 +1,48 @@
+@import url("https://fonts.googleapis.com/css2?family=EB+Garamond&family=Montserrat:wght@300;400;700&family=Poppins:wght@200;300;500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=EB+Garamond&family=Montserrat:wght@300;400;700&family=Orbitron&family=Poppins:wght@200;300;500&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Chivo+Mono:wght@300&family=EB+Garamond&family=Montserrat:wght@300;400;700&family=Orbitron&family=Play&family=Poppins:wght@200;300;500&family=Sanchez&display=swap');
+
+
+nav a {
+    font-family: 'Orbitron', sans-serif;
+    letter-spacing: 1px;
+    transition: color 0.3s ease-in-out;
+}
+
+
+.success-container {
+    max-width: 400px;
+    margin: auto;
+    padding: 20px;
+    background-color: #2ecc71;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    color: #fff;
+    text-align: center;
+}
+
+.success-container h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.success-container p {
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+.success-container a {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #3498db;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.success-container a:hover {
+    background-color: #2980b9;
+}
+
+

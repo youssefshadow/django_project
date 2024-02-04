@@ -1,0 +1,28 @@
+{% extends 'core/base.html' %}
+{% block title %}{{ title }}{% endblock %}
+{%block content%}
+<h1 class="mb-6 text-3xl" >{{title}}</h11>
+    <form method="post" action="" enctype="multipart/form-data" class="max-w-lg mx-auto mt-8 p-6 bg-white rounded-xl shadow-md">
+        {% csrf_token %}
+        <div class='space-y-4'>
+            {{ form.as_p }}
+        </div>
+        {% if form.errors %}
+            <div class="mt-6 p-4 bg-red-100 rounded-xl">
+                {% for field in form %}
+                    <div class="mb-2">
+                        <label class="text-red-600">{{ field.label_tag }}</label>
+                        {{ field }}
+                        {% for error in field.errors %}
+                            <p class="text-sm text-red-600">{{ error }}</p>
+                        {% endfor %}
+                    </div>
+                {% endfor %}
+                {{ form.non_field_errors }}
+            </div>
+        {% endif %}
+        <button class="mt-6 py-4 px-8 text-lg bg-teal-500 hover:bg-teal-700 rounded-xl text-white" type="submit">Submit</button>
+    </form>
+    
+    
+{% endblock %}
