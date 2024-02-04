@@ -9,7 +9,12 @@ nav a {
     transition: color 0.3s ease-in-out;
 }
 
-
+h2 {
+    font-size: 2rem !important;
+    color: #333;
+    margin-bottom: 1rem;
+  }
+  
 .success-container {
     max-width: 400px;
     margin: auto;
