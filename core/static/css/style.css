@@ -29,6 +29,7 @@ h2 {
 .success-container h2 {
     font-size: 24px;
     margin-bottom: 10px;
+    font-family: 'Orbitron', sans-serif;
 }
 
 .success-container p {
