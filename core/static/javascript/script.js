@@ -1,8 +1,8 @@
-document.getElementById('burger-menu').addEventListener('click', function () {
-    document.getElementById('burger-menu-content').classList.toggle('hidden');
+console.log('Le fichier JavaScript est chargé!');
+ // JavaScript to toggle the mobile menu visibility
+ document.getElementById('mobile-menu-button').addEventListener('click', function () {
+    document.getElementById('mobile-menu').classList.toggle('hidden');
 });
 
-document.getElementById('close-burger-menu').addEventListener('click', function () {
-    document.getElementById('burger-menu-content').classList.add('hidden');
-});
-console.log('hi world');
+
+
