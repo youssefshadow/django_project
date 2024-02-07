@@ -2,7 +2,10 @@
 @import url("https://fonts.googleapis.com/css2?family=EB+Garamond&family=Montserrat:wght@300;400;700&family=Orbitron&family=Poppins:wght@200;300;500&display=swap");
 @import url('https://fonts.googleapis.com/css2?family=Chivo+Mono:wght@300&family=EB+Garamond&family=Montserrat:wght@300;400;700&family=Orbitron&family=Play&family=Poppins:wght@200;300;500&family=Sanchez&display=swap');
 
-
+body, html {
+    margin: 0 !important;
+    padding: 0 !important;
+}
 nav a {
     font-family: 'Orbitron', sans-serif;
     letter-spacing: 1px;
