@@ -3,27 +3,40 @@
 {% block title %}Conversation{% endblock %}
 
 {% block content %}
+{% load static %}
+
 <div class="container mx-auto my-4">
-    <div class="space-y-4">
+    <div class="flex flex-col space-y-4">
         {% for message in conversation.messages.all %}
-            <div class="rounded-xl p-4 
+            <div class="max-w-md mx-auto rounded-md p-4 
                 {% if message.created_by == request.user %}
-                    bg-blue-500
+                    bg-blue-500 text-white self-end
                 {% else %}
-                    bg-red-300
-                {% endif %}
-                text-white">
-                <div class="flex items-center">
-                    <div class="flex-grow">
-                        <h5 class="mb-2 font-semibold">{{ message.created_by.username }}</h5>
-                        <p class="text-xs">{{ message.created_at }}</p>
+                    bg-gray-200
+                {% endif %}">
+                <div class="flex items-start">
+                    {% if message.created_by != request.user %}
+                        <div class="mr-2">
+                            <img src="{% static 'images/avatar.webp' %}" alt="Sender Avatar" class="w-8 h-8 rounded-full">
+                        </div>
+                    {% else %}
+                        <div class="mr-2">
+                            <img src="{% static 'images/avatar.jpg' %}" alt="Receiver Avatar" class="w-8 h-8 rounded-full">
+                        </div>
+                    {% endif %}
+                    <div class="flex flex-col">
+                        <div>
+                            <h5 class="mb-1 font-semibold">{{ message.created_by.username }}</h5>
+                        </div>
+                        <p class="text-sm">{{ message.content }}</p>
                     </div>
                 </div>
-                <p class="mt-3">{{ message.content }}</p>
+                <p class="mt-2 text-xs text-black-500">{{ message.created_at }}</p>
             </div>
         {% endfor %}
     </div>
 </div>
+
 
 <form method="post" action="">
     {% csrf_token %}
