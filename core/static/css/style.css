@@ -35,6 +35,43 @@ h2 {
     color: #ff6f61;
 }
 
+#mobile-menu-button {
+    font-size: 1.8em;
+    font-weight: 700;
+    background-color: transparent;
+    border: none;
+    border-radius: 50%;
+    color: #555;
+    cursor: pointer;
+    transition: color 0.3s ease;
+    position: fixed;
+    top: 10px; 
+    right: 10px; 
+}
+
+
+
+
+#mobile-menu-button {
+    transition: color 0.3s ease;
+}
+
+#mobile-menu-button.menu-closed {
+    color: #ff6f61;
+}
+
+#mobile-menu {
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+#mobile-menu.hidden {
+    opacity: 0;
+    transform: translateY(-100%);
+}
+
+
 
 
   
