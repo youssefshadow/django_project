@@ -28,7 +28,11 @@ h2 {
     letter-spacing: 2px;
     margin-bottom: 20px;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-    
+    transition: color 0.3s ease; 
+}
+
+.my_title:hover {
+    color: #ff6f61;
 }
 
 
