@@ -14,58 +14,40 @@
     
 <body>
     <nav class="py-6 px-6 flex justify-between items-center border-b border-gray-200">
+        <!-- Brand Logo and Name -->
         <a href="/" class="flex items-center text-lg font-bold text-teal-500">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-6 h-6 mr-2">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
             </svg>
-            
             Django
         </a>
-
-        <div class="hidden md:flex items-center space-x-6">
-            <a href="{% url 'item:new' %}" class="text-lg font-semibold hover:text-gray-500">New Item</a>
-            <a href="{% url 'item:items' %}" class="text-lg font-semibold hover:text-gray-500">Browse</a>
-            {% if user.is_authenticated %}
-                <a href="{% url 'conversation:inbox'%}" class="px-6 py-3 text-lg font-semibold bg-teal-500 text-white rounded-xl hover:bg-teal-700">Inbox</a>
-                <a href="{% url 'dashboard:index' %}" class="px-6 py-3 text-lg font-semibold bg-gray-500 text-white rounded-xl hover:bg-gray-700">Dashboard</a>
-                <form method="post" action="{% url 'core:logout' %}">
-                    {% csrf_token %}
-                    <button type="submit" class="px-6 py-3 text-lg font-semibold bg-red-500 text-white rounded-xl hover:bg-red-700">Logout</button>
-                </form>
-            {% else %}
-                <a href="{% url 'core:signup' %}" class="px-6 py-3 text-lg font-semibold bg-teal-500 text-white rounded-xl hover:bg-teal-700">Sign up</a>
-                <a href="{% url 'core:login' %}" class="px-6 py-3 text-lg font-semibold bg-gray-500 text-white rounded-xl hover:bg-gray-700">Login</a>
-            {% endif %}
-        </div>
-
-        <!-- Responsive menu for small screens -->
-        <div id="mobile-menu" class="hidden md:hidden">
-            <a href="{% url 'item:new' %}" class="block py-2 px-4 md:py-1 md:px-2 font-semibold hover:text-gray-500">New Item</a>
-            <a href="{% url 'item:items' %}" class="block py-2 px-4 md:py-1 md:px-2 font-semibold hover:text-gray-500">Browse</a>
-            {% if user.is_authenticated %}
-            <a href="{% url 'conversation:inbox'%}" class="px-6 py-3 text-lg font-semibold bg-teal-500 text-white rounded-xl hover:bg-teal-700 mt-4">Inbox</a>
-
-            <a href="{% url 'dashboard:index' %}" class="px-6 py-3 text-lg font-semibold bg-gray-500 text-white rounded-xl hover:bg-gray-700 mt-4">Dashboard</a>
-            
-            <form method="post" action="{% url 'core:logout' %}">
-                {% csrf_token %}
-                <button type="submit" class="px-6 py-3 text-lg font-semibold bg-red-500 text-white rounded-xl hover:bg-red-700 mt-4">Logout</button>
-            </form>
-            
-            {% else %}
-            <a href="{% url 'core:signup' %}" class="block py-2 px-4 md:py-1 md:px-2 mt-2 md:mt-0 font-semibold bg-teal-500 text-white rounded-xl hover:bg-teal-700">Sign up</a>
-            <a href="{% url 'core:login' %}" class="block py-2 px-4 md:py-1 md:px-2 mt-2 md:mt-0 font-semibold bg-gray-500 text-white rounded-xl hover:bg-gray-700">Login</a>
-            
-            {% endif %}
-        </div>
-
+    
+        <!-- Mobile Menu Button -->
         <div class="md:hidden">
-            <button id="mobile-menu-button" class="text-gray-500 hover:text-gray-700 focus:outline-none rounded-full">
+            <button id="mobile-menu-button" class="text-gray-500 hover:text-gray-700 focus:outline-none">
                 ☰
             </button>
         </div>
-        
+    
+        <!-- Responsive menu for small screens -->
+        <div id="mobile-menu" class="hidden md:hidden">
+            <a href="{% url 'item:new' %}" class="block py-2 px-4 font-semibold hover:text-gray-500">New Item</a>
+            <a href="{% url 'item:items' %}" class="block py-2 px-4 font-semibold hover:text-gray-500">Browse</a>
+    
+            {% if user.is_authenticated %}
+                <a href="{% url 'conversation:inbox'%}" class="block py-2 px-4 font-semibold text-teal-500 hover:text-teal-700">Inbox</a>
+                <a href="{% url 'dashboard:index' %}" class="block py-2 px-4 font-semibold text-gray-500 hover:text-gray-700">Dashboard</a>
+                <form method="post" action="{% url 'core:logout' %}" class="mt-4">
+                    {% csrf_token %}
+                    <button type="submit" class="block w-full py-2 px-4 font-semibold bg-red-500 text-white rounded-md hover:bg-red-700">Logout</button>
+                </form>
+            {% else %}
+                <a href="{% url 'core:signup' %}" class="block py-2 px-4 font-semibold text-teal-500 hover:text-teal-700 mt-2">Sign up</a>
+                <a href="{% url 'core:login' %}" class="block py-2 px-4 font-semibold text-gray-500 hover:text-gray-700">Login</a>
+            {% endif %}
+        </div>
     </nav>
+    
 
     
     <div class="px-6 py-6" >
